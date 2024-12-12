@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique - Events & Workshops</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arima', sans-serif;
+      background-color: #ffffff;
+    }
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .event-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      background-color: #fff;
+    }
+    .event-card:hover {
+      transform: translateY(-5px);
+    }
+    .event-img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .countdown {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+    .footer a {
+      color: #f8f9fa;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main container to set up flex layout */
+    .shopmap-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 100px;
+    }
+
+    /* Map section styling */
+    .map-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    /* Info section styling */
+    .info-section {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    /* Responsive iframe */
+    .map-iframe {
+      margin-top: 20px;
+      width: 100%;
+      height: 340px;
+      border: 0;
+    }
+
+    /* Shop profile styling */
+    .shop-profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    /* Shop image styling */
+    .shop-image {
+      width: 160px;
+      height: 100px;
+      border-radius: 8px;
+      margin-right: 30px;
+      
+    }
+
+    /* Shop details */
+    .shop-details h5 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+
+    .shop-details p {
+      margin: 0;
+      font-size: 0.9em;
+      color: gray;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Bean Boutique</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="coffee.html">Coffee</a></li>
+                <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
+                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                <li class="nav-item"><a class="nav-link" href="signup.html">SignUp</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart <span id="cart-badge" class="badge bg-danger" style="display: none;">0</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Events Section -->
+  <section id="events" class="container mt-5 mb-5">
+    <h2 class="text-center mb-4">Upcoming Events & Workshops</h2>
+
+
+
+    <!-- Event List -->
+    <div class="row">
+      <!-- Existing events -->
+      <div class="col-lg-6 mb-4">
+        <div class="event-card shadow-sm">
+          <img src="images/event1.jpeg" alt="Coffee Tasting Session" class="event-img card-img-top">
+          <div class="card-body p-4">
+            <h5 class="card-title">Coffee Tasting Session - Oct 30</h5>
+            <p class="card-text">Join us for a delightful experience exploring various coffee blends. Guest Speaker: John Doe, Coffee Expert.</p>
+            <p><strong>Agenda:</strong> 1 PM - Introduction, 1:30 PM - Tasting, 3 PM - Q&A</p>
+            <p><strong>Ticket Price:</strong> $20 (Early Bird: $15)</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none" onclick="registerEvent(20)">Register Now</a></button>
+            </div>    
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-4">
+        <div class="event-card shadow-sm">
+          <img src="images/event2.jpg" alt="Brewing Class" class="event-img card-img-top">
+          <div class="card-body p-4">
+            <h5 class="card-title">Brewing Class - Nov 12</h5>
+            <p class="card-text">Learn the art of brewing coffee at home. Guest Speaker: Jane Smith, Barista Champion.</p>
+            <p><strong>Agenda:</strong> 2 PM - Brewing Techniques, 4 PM - Hands-On Practice</p>
+            <p><strong>Ticket Price:</strong> $30</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none" onclick="registerEvent(30)">Register Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <!-- New Events -->
+      <div class="col-lg-6 mb-4">
+        <div class="event-card shadow-sm">
+          <img src="images/event3.jpg" alt="Free Coffee Tasting" class="event-img card-img-top">
+          <div class="card-body p-4">
+            <h5 class="card-title">Free Coffee Tasting - Nov 5</h5>
+            <p class="card-text">Join us for a complimentary tasting session. No ticket required!</p>
+            <p><strong>Agenda:</strong> 2 PM - Tasting, 3 PM - Feedback</p>
+            <p><strong>Ticket Price:</strong> Free</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none" onclick="registerEvent(0)">Register Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-4">
+        <div class="event-card shadow-sm">
+          <img src="images/event4.jpg" alt="Free Brewing Workshop" class="event-img card-img-top">
+          <div class="card-body p-4">
+            <h5 class="card-title">Free Brewing Workshop - Nov 10</h5>
+            <p class="card-text">Learn brewing techniques without any charge!</p>
+            <p><strong>Agenda:</strong> 1 PM - Techniques, 2 PM - Hands-On Practice</p>
+            <p><strong>Ticket Price:</strong> Free</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none" onclick="registerEvent(0)">Register Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-4">
+        <div class="event-card shadow-sm">
+          <img src="images/event5.jpg" alt="Advanced Brewing Techniques" class="event-img card-img-top">
+          <div class="card-body p-4">
+            <h5 class="card-title">Advanced Brewing Techniques - Nov 15</h5>
+            <p class="card-text">Dive deeper into coffee brewing with advanced techniques. Guest Speaker: Alex Johnson.</p>
+            <p><strong>Agenda:</strong> 10 AM - Advanced Techniques, 12 PM - Q&A</p>
+            <p><strong>Ticket Price:</strong> $50</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none" onclick="registerEvent(50)">Register Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-4">
+        <div class="event-card shadow-sm">
+          <img src="images/event6.jpg" alt="Coffee Festival" class="event-img card-img-top">
+          <div class="card-body p-4">
+            <h5 class="card-title">Annual Coffee Festival - Dec 1</h5>
+            <p class="card-text">Join us for our Annual Coffee Festival featuring tastings, workshops, and more!</p>
+            <p><strong>Ticket Price:</strong> $40</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none" onclick="registerEvent(40)">Register Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="shopmap-container mt-4">
+      <!-- Map Section -->
+      <div class="map-section">
+        <h4>Event Location</h4>
+        <iframe class="map-iframe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1599914559053!2d-122.4194154846789!3d37.77492977975954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808b5e2e1981%3A0x4da8e3f1cd3e7f3!2sBean%20Boutique%2C%201234%20Coffee%20St%2C%20San%20Francisco%2C%20CA%2094103%2C%20USA!5e0!3m2!1sen!2sde!4v1634545571300!5m2!1sen!2sde"
+                allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    
+      <!-- Information Section -->
+      <div class="info-section">
+        <h4 class="mb-4">Our Shops</h4>
+    
+        <!-- Shop 1 -->
+        <div class="shop-profile">
+          <img src="images/coffeshop1.jpg" alt="Shop 1" class="shop-image">
+          <div class="shop-details">
+            <h5>Shop 1</h5>
+            <p>123 Coffee St, San Francisco, CA 94103</p>
+            <p>Email: shop1@example.com</p>
+            <p>Contact: (123) 456-7890</p>
+          </div>
+        </div>
+    
+        <!-- Shop 2 -->
+        <div class="shop-profile">
+          <img src="images/coffeeshop2.jpg" alt="Shop 2" class="shop-image">
+          <div class="shop-details">
+            <h5>Shop 2</h5>
+            <p>456 Bean Ave, San Francisco, CA 94107</p>
+            <p>Email: shop2@example.com</p>
+            <p>Contact: (123) 456-7891</p>
+          </div>
+        </div>
+    
+        <!-- Shop 3 -->
+        <div class="shop-profile">
+          <img src="images/coffeeshop3.jpg" alt="Shop 3" class="shop-image">
+          <div class="shop-details">
+            <h5>Shop 3</h5>
+            <p>789 Brew Ln, San Francisco, CA 94109</p>
+            <p>Email: shop3@example.com</p>
+            <p>Contact: (123) 456-7892</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Footer -->
+<footer class="text-white text-center py-4 shadow-lg" style="background-color: skyblue;">
+  <p class="mb-2">&copy; 2024 Bean Boutique. All rights reserved.</p>
+  <div class="footer-social-media">
+    <a href="#" aria-label="Instagram" class="text-white mx-2 h5"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="Facebook" class="text-white mx-2 h5"><i class="fab fa-facebook"></i></a>
+    <a href="#" aria-label="Twitter" class="text-white mx-2 h5"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+    <!-- Registration and Ticketing Options -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registrationModalLabel">Register for the Event</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="registrationForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+              <div class="mb-3">
+                <label for="ticketPriceDisplay" class="form-label">Total Price</label>
+                <input type="text" class="form-control" id="ticketPriceDisplay" value="$0.00" readonly>
+              </div>
+              <input type="hidden" id="ticketPrice" value="">
+          </form>          
+          <div class="modal-footer d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="submitRegistration()">Submit</button>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Alert -->
+<div class="alert alert-success alert-dismissible fade" id="confirmationAlert" role="alert" style="display: none;">
+  <strong>Registration Successful!</strong> Thank you for registering. We will contact you shortly.
+  <button type="button" class="btn-close" aria-label="Close" onclick="closeAlert()"></button>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    function registerEvent(ticketPrice) {
+  // Set the hidden ticket price input
+  document.getElementById('ticketPrice').value = ticketPrice;
+
+  // Update the displayed total price in the modal
+  const ticketPriceDisplay = document.getElementById('ticketPriceDisplay');
+  ticketPriceDisplay.value = `$${ticketPrice.toFixed(2)}`;
+
+  // Show the registration modal
+  const registrationModal = new bootstrap.Modal(document.getElementById('registrationModal'));
+  registrationModal.show();
+}
+
+function submitRegistration() {
+  // Logic to submit the registration can be added here.
+  // Display the confirmation alert
+  const confirmationAlert = document.getElementById('confirmationAlert');
+  confirmationAlert.style.display = 'block';
+
+  // Clear the registration form
+  document.getElementById('registrationForm').reset();
+
+  // Hide the modal
+  const registrationModal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+  registrationModal.hide();
+}
+
+function closeAlert() {
+  const confirmationAlert = document.getElementById('confirmationAlert');
+  confirmationAlert.style.display = 'none';
+}
+
+  </script>
+</body>
+</html>

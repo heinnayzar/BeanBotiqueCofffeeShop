@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique - Special Offers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Bean Boutique</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="coffee.html">Coffee</a></li>
+                <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
+                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                <li class="nav-item"><a class="nav-link" href="signup.html">SignUp</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart <span id="cart-badge" class="badge bg-danger" style="display: none;">0</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Special Offers and Subscription Section -->
+  <section id="special-offers" class="container mt-5">
+    <h2 class="text-center">Special Offers & Subscription Plans</h2>
+    
+    <!-- Promo Offers Section -->
+    <div class="row my-5">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/event4.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="20% Off Coffee Blends">
+          <div class="card-body">
+            <h5 class="card-title">20% Off Coffee Blends</h5>
+            <p class="card-text">Enjoy a special discount on our premium coffee blends this month!</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none">Shop Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/event2.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Buy 2 Get 1 Free on Brewing Equipment">
+          <div class="card-body">
+            <h5 class="card-title">Buy 2 Get 1 Free on Equipment</h5>
+            <p class="card-text">Purchase any two brewing items and get the third one free!</p>
+           <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none">Shop Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/event6.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Free Shipping on Orders Over $50">
+          <div class="card-body">
+            <h5 class="card-title">Free Shipping on Orders Over $50</h5>
+            <p class="card-text">Get free shipping on all coffee blends and equipment when you spend $50 or more.</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none">Shop Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subscription Plans Section -->
+    <h3 class="text-center mt-5">Subscription Plans</h3>
+    <div class="row my-5">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/event3.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Monthly Coffee Subscription">
+          <div class="card-body">
+            <h5 class="card-title">Monthly Coffee Subscription</h5>
+            <p class="card-text">Receive a curated selection of coffee blends delivered to your door every month.</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none">Subscribe Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/event5.jpg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Quarterly Coffee Subscription">
+          <div class="card-body">
+            <h5 class="card-title">Quarterly Coffee Subscription</h5>
+            <p class="card-text">Get a fresh batch of coffee every quarter, perfect for occasional coffee lovers.</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none">Subscribe Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="images/event1.jpeg" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Annual Coffee Subscription">
+          <div class="card-body">
+            <h5 class="card-title">Annual Coffee Subscription</h5>
+            <p class="card-text">Sign up for a year of great coffee with our best-value subscription plan.</p>
+            <div>
+              <button class="specialbutton"><a href="#" class="text-decoration-none">Subscribe Now</a></button>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+<footer class="text-white text-center py-4 shadow-lg" style="background-color: skyblue;">
+  <p class="mb-2">&copy; 2024 Bean Boutique. All rights reserved.</p>
+  <div class="footer-social-media">
+    <a href="#" aria-label="Instagram" class="text-white mx-2 h5"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="Facebook" class="text-white mx-2 h5"><i class="fab fa-facebook"></i></a>
+    <a href="#" aria-label="Twitter" class="text-white mx-2 h5"><i class="fab fa-twitter"></i></a>
+  </div>
+</footer>
+
+  <script>
+    function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+        
+        const cartBadge = document.getElementById('cart-badge');
+        cartBadge.innerText = totalItems;
+
+        // Show badge only if there are items in the cart
+        if (totalItems > 0) {
+            cartBadge.style.display = 'inline';
+        } else {
+            cartBadge.style.display = 'none';
+        }
+    }
+
+    // Call updateCartBadge when the page loads
+    window.onload = function() {
+        updateCartBadge();
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

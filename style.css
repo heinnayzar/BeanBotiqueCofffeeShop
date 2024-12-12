@@ -1,0 +1,92 @@
+body {
+  font-family: "Arima", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: white;
+}
+
+.nav-link {
+  position: relative;
+}
+
+#cart-badge {
+  position: inherit;
+  top: -10px; 
+  right: -1px; 
+  font-size: 0.6em;
+  padding: 0.1em 0.5em; 
+}
+  
+  footer {
+    background-color: #f8f9fa;
+  }
+  
+  .social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+  }
+
+  /* From Uiverse.io by abrahamcalsin */ 
+.specialbutton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #183153;
+  font-family: "Arima", system-ui;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+.specialbutton:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  /* background: #ffd401; */
+  background-color: skyblue;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+.specialbutton:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+.specialbutton a {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 9px 12px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+.specialbutton:hover a {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique - Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="style.css">
+    <style>
+
+        body {
+        font-family: "Arima", system-ui;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        .nav-link {
+        position: relative;
+        }
+
+        /* Center the text and image in table cells */
+    table.table td, table.table th {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    /* Make sure the image is still small */
+    table.table td img {
+        display: inline;
+        margin: 0 auto; /* Center the image */
+        width: 30px;
+        height: auto;
+    }
+
+        #cart-badge {
+        position: inherit;
+        top: -10px; 
+        right: -1px; 
+        font-size: 0.6em;
+        padding: 0.1em 0.5em; 
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+
+        .cart-item img {
+            width: 30%;
+            height: auto;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+
+        .cart-details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cart-details h5 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .cart-details .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Bean Boutique</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="coffee.html">Coffee</a></li>
+                <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
+                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+                <li class="nav-item"><a class="nav-link" href="signup.html">SignUp</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart <span id="cart-badge" class="badge bg-danger" style="display: none;">0</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <header class="container mt-5 text-center">
+    <h2>Your Cart</h2>
+    <p id="discount-message" style="display: none; color: green;">Congratulations! You've received a 5% discount for signing up.</p>
+    <div class="cart-summary">      
+        <!-- Other cart items here -->
+        <p id="total-price">Total Price: $0.00</p>
+    <p id="discount-price" style="display: none; color: green;">Discount: -$0.00</p>
+    <p id="final-price" style="display: none; font-weight: bold;">Final Price: $0.00</p>
+    </div>   
+</header>    
+
+
+    <section id="cart-items" class="container mt-5">
+        <!-- Cart items will be dynamically inserted here -->
+    </section>
+
+    <!-- Clear Cart Button -->
+    <div class="container d-flex justify-content-between mt-4 mb-4">
+        <button class="btn btn-primary" onclick="generateReceipt()">Generate Receipt</button>
+        <button class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
+    </div>
+
+    <!-- Footer -->
+<footer class="text-white text-center py-4 shadow-lg" style="background-color: skyblue;">
+    <p class="mb-2">&copy; 2024 Bean Boutique. All rights reserved.</p>
+    <div class="footer-social-media">
+      <a href="#" aria-label="Instagram" class="text-white mx-2 h5"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook" class="text-white mx-2 h5"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Twitter" class="text-white mx-2 h5"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+    <!-- Modal for Receipt -->
+    <div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="receiptModalLabel">Receipt</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <p id="receipt-details"></p> 
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        function loadCart() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const discountPriceElement = document.getElementById('discount-price');
+    const finalPriceElement = document.getElementById('final-price');
+    
+    cartItemsContainer.innerHTML = '';
+
+    if (cart.length === 0) {
+        // Display message and reset prices if the cart is empty
+        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        document.getElementById('total-price').textContent = 'Total Price: $0.00';
+        discountPriceElement.style.display = 'none';
+        finalPriceElement.style.display = 'none';
+        return;
+    }
+
+    let totalPrice = 0;
+    const cartTable = document.createElement('table');
+    cartTable.className = 'table table-hover';
+    cartTable.innerHTML = `
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Grind Type</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    `;
+    const tbody = cartTable.querySelector('tbody');
+    cart.forEach(item => {
+        totalPrice += item.price * item.quantity;
+        const grindType = item.grindType ? item.grindType : '-';
+        const cartItemRow = document.createElement('tr');
+        cartItemRow.innerHTML = `
+            <td><img src="${item.image || 'default-image.jpg'}" alt="${item.name || 'Item'}">${item.name || 'Unknown Item'}</td>
+            <td>${grindType}</td>
+            <td>${item.size || '-'}</td>
+            <td>$${(item.price * item.quantity).toFixed(2)}</td>
+            <td class="text-center">
+                <div class="input-group me-2 justify-content-center" style="flex: 0 0 30%;"> 
+                <button class="btn btn-outline-secondary" onclick="updateQuantity('${item.id}', -1)">-</button>
+                <input class="text-center" type="number" value="${item.quantity || 1}" min="1" style="width: 50px;" readonly>
+                <button class="btn btn-outline-secondary" onclick="updateQuantity('${item.id}', 1)">+</button>
+                </div>
+            </td>
+            <td><button class="btn btn-danger" onclick="removeFromCart('${item.id}')">Remove</button></td>
+        `;
+        tbody.appendChild(cartItemRow);
+    });
+    cartItemsContainer.appendChild(cartTable);
+    document.getElementById('total-price').textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+
+    // Check if the user is signed up for discount
+    const signedUp = localStorage.getItem('signedUp') === 'true';
+
+    if (signedUp) {
+        const discountPercentage = 5;
+        const discountAmount = (totalPrice * discountPercentage) / 100;
+        const finalPrice = totalPrice - discountAmount;
+
+        discountPriceElement.textContent = `Discount: -$${discountAmount.toFixed(2)}`;
+        finalPriceElement.textContent = `Final Price: $${finalPrice.toFixed(2)}`;
+        
+        discountPriceElement.style.display = 'block';
+        finalPriceElement.style.display = 'block';
+    } else {
+        discountPriceElement.style.display = 'none';
+        finalPriceElement.style.display = 'none';
+    }
+}
+
+        
+        function generateReceipt() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+        const receiptDetails = document.getElementById('receipt-details');
+        receiptDetails.innerHTML = "Your cart is empty, no receipt to generate.";
+        new bootstrap.Modal(document.getElementById('receiptModal')).show();
+        return;
+    }
+
+    let receiptContent = "";
+    let totalPrice = 0;
+
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        receiptContent += `${item.name} (${item.quantity} x $${item.price.toFixed(2)}) = $${itemTotal.toFixed(2)}<br><hr>`;
+        totalPrice += itemTotal;
+    });
+
+    const signedUp = localStorage.getItem('signedUp') === 'true';
+    if (signedUp) {
+        const discountPercentage = 5;
+        const discountAmount = (totalPrice * discountPercentage) / 100;
+        const finalPrice = totalPrice - discountAmount;
+
+        receiptContent += `<br>Total Price: $${totalPrice.toFixed(2)}<br>`;
+        receiptContent += `Discount (${discountPercentage}%): -$${discountAmount.toFixed(2)}<br>`;
+        receiptContent += `<strong>Final Price: $${finalPrice.toFixed(2)}</strong>`;
+    } else {
+        receiptContent += `<br><strong>Total Price: $${totalPrice.toFixed(2)}</strong>`;
+    }
+
+    document.getElementById('receipt-details').innerHTML = receiptContent;
+    new bootstrap.Modal(document.getElementById('receiptModal')).show();
+}
+
+// Function to show discount message if user is signed up
+function showDiscountMessage() {
+    const signedUp = localStorage.getItem('signedUp') === 'true';
+    const discountMessage = document.getElementById('discount-message');
+    if (signedUp) {
+        discountMessage.style.display = 'block';
+    } else {
+        discountMessage.style.display = 'none';
+    }
+}
+
+// Call showDiscountMessage when the page loads
+window.onload = function () {
+    updateCartBadge();
+    loadCart();
+    showDiscountMessage();
+};
+
+
+        // Clear cart function (you may need to implement this based on your logic)
+        function clearCart() {
+            localStorage.removeItem('cart');
+            loadCart();
+        }
+    
+        function updateQuantity(itemId, change) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cart.findIndex(item => item.id === itemId);
+            if (itemIndex > -1) {
+                cart[itemIndex].quantity += change;
+                if (cart[itemIndex].quantity < 1) cart[itemIndex].quantity = 1; // Ensure quantity is at least 1
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart(); // Reload cart to update display
+                updateCartBadge(); // Update the cart badge
+            }
+        }
+
+        function removeFromCart(itemId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.id !== itemId); // Remove item from cart
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart(); // Reload cart to update display
+            updateCartBadge(); // Update the cart badge
+        }
+
+        function clearCart() {
+            // Clear the cart from localStorage
+            localStorage.removeItem('cart');
+            // Reload the cart display
+            loadCart();
+            // Update the cart badge
+            updateCartBadge();
+        }
+    
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+    
+            const cartBadge = document.getElementById('cart-badge');
+            cartBadge.innerText = totalItems;
+    
+            // Show badge only if there are items in the cart
+            if (totalItems > 0) {
+                cartBadge.style.display = 'inline';
+            } else {
+                cartBadge.style.display = 'none';
+            }
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
