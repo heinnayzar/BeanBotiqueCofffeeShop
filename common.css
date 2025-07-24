@@ -1,0 +1,43 @@
+body {
+  font-family: "San Francisco", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  background-color: white;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link:hover {
+      background-color: #e0e0e0;
+      color: black;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+.nav-link.active {
+  color: white !important;
+  background-color: darkred;   
+  border-radius: 5px;
+}  
+  
+.highlighted {
+  background-color: skyblue;
+  border-radius: 3px;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -6,198 +6,103 @@
   <title>Bean Boutique - Welcome</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="common.css">
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    .container .product-card {
-  padding: 0 50px; /* Adds more gap between columns */
-}
-
-.product-card .image-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 300px; /* Set a fixed height for consistent card size */
-}
-
-.product-card .product-image {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;/* Makes the image fill the container without distortion */
-  transition: transform 0.3s ease;
-}
-
-.product-card .overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-}
-
-.product-card .overlay a {
-  display: block;
-  width: 100%;
-  padding: 10px 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Black with opacity */
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.product-card .image-container:hover .overlay {
-  opacity: 1;
-}
-
-.product-card .image-container:hover .product-image {
-  transform: scale(1.15); /* Slight zoom effect */
-}
-
-.product-card h5,
-.product-card p {
-  margin-top: 10px;
-}
-
-.testimonial-section {
-    text-align: center;
-    margin: 30px 0px;
-}
-
-.profiles {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.profile {
-    margin: 0 15px;
-    transition: transform 0.5s, opacity 0.5s;
-}
-
-.profile img {
-    border-radius: 50%;
-    width: 80px; /* Smaller profile images */
-    height: 80px; /* Smaller profile images */
-}
-
-.profile.active {
-    transform: scale(1.5); /* Larger current profile */
-    opacity: 1;
-}
-
-.profile:not(.active) {
-    opacity: 0.5; /* Faded smaller profiles */
-}
-
-.testimonial-text {
-    margin: 30px 250px;
-}
-
-@media (max-width: 992px) {
-  .testimonial-text {
-    margin: 10px;
-}
-}
-
-.guarantee-icon {
-  font-size: 2rem; 
-  margin: 15px 0px;
-}
-
-.custom-notification {
-  background-color: skyblue;
-  color: white;
-  border: none;
-  border-radius: 0;
-}
-
-.btn {
-  font-size: 1em;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-}
-.custom-link {
-    color: white;
-    text-decoration: none;
-  }
-  .custom-link:hover {
-    color: #183153;
-  }
-
-  .custom-img-height {
-    height: 500px;
-    object-fit: cover;
-  }
-
-  custom-img-height {
-    height: auto;
-}
-
-@media (max-width: 768px) {
-    .custom-img-height {
-        max-height: 200px;
-        object-fit: cover;
-    }
-}
-  </style>
 </head>
 <body>
-  <div class="py-1 text-center custom-notification d-flex justify-content-center align-items-center" role="alert">
-    <p class="mb-0 me-3 bold">Get a 5% discount on your first order!</p>
-    <a href="signup.html" class="custom-link">Sign Up</a>
-  </div>
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Bean Boutique</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <a class="navbar-brand" href="#">Bean Boutique <i class="fa-solid fa-mug-hot"></i></a>
+        <button class="navbar-toggler my-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="coffee.html">Coffee</a></li>
-                <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
-                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
-                <li class="nav-item"><a class="nav-link" href="signup.html">SignUp</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.html">Cart <span id="cart-badge" class="badge bg-danger" style="display: none;">0</span></a>
-                </li>
+            <ul class="navbar-nav ms-auto gap-3">
+              <li class="nav-item">
+                <div class="input-group animated-search">
+                  <input type="text" id="searchInput" class="form-control" placeholder="Search on page..." aria-label="Search">
+                  <span class="input-group-text"><i class="bi bi-search"></i></span>
+                </div>
+              </li>
+              <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="coffee.html">Coffee</a></li>
+              <li class="nav-item"><a class="nav-link" href="equipment.html">Equipments</a></li>
+              <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+              <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+              <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="cart.html">Cart <span id="cart-badge" class="badge bg-danger" style="display: none;">0</span></a>
+              </li>
             </ul>
         </div>
     </div>
   </nav>
-  
-  <div>
-    <img src="images/coffeelandscape.webp" class="w-100 custom-img-height">
+
+  <!-- Welcome Popup Modal -->
+  <div class="modal fade" id="welcomeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content custom-modal text-center p-4">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h4 class="modal-title mb-3">Welcome to Bean Boutique</h4>
+        <p class="mb-4">Sign up today and enjoy <strong>5% OFF</strong> your first order.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Maybe Later</button>
+          <a href="signup.html" class="btn btn-dark">Sign Up</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-<!-- Video and Text Section -->
-<section class="d-flex align-items-center my-5">
-  <div class="container">
-    <h2 class="text-center">Experience Our Craft</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <video src="images/coffeebean.mp4" autoplay muted loop class="w-100"></video>
+  <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/coffeelandscape.webp" class="d-block w-100 custom-img-height" alt="Slide 1">
+      <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+        <h2 class="fw-bold">Welcome to Bean Boutique</h2>
+        <p>Experience exceptional service with every sip.</p>
       </div>
-      <div class="col-md-6 d-flex flex-column justify-content-center">
-        <p>Discover the rich flavors and expert craftsmanship behind every cup of Bean Boutique coffee. Join us on a journey of flavor, passion, and quality.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nobis illo dignissimos eligendi, voluptatum vel itaque aliquam atque ex, error in minima non adipisci id, molestias libero reprehenderit impedit eaque perspiciatis dolorum tempora?</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti labore saepe ad assumenda! Harum omnis ipsa vel at voluptates dignissimos illo atque pariatur.</p>
-        <div>
-          <button class="specialbutton"><a href="events.html" class="text-decoration-none">View Events</a></button>
-        </div>  
-      </div> 
+    </div>
+    <div class="carousel-item">
+      <img src="images/coffeelandscape2.jpg" class="d-block w-100 custom-img-height" alt="Slide 2">
+      <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+        <h2 class="fw-bold">Warm Hearts, Warm Coffee</h2>
+        <p>Our team is dedicated to making you feel at home.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/coffeelandscape4.jpg" class="d-block w-100 custom-img-height" alt="Slide 3">
+      <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+        <h2 class="fw-bold">Crafted with Care</h2>
+        <p>Only the highest quality beans make it to your cup.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Optional controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Special Offers Section -->
+ <section class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-lg-6 mb-3 mb-lg-0">
+      <img src="images/warmcommunity1.webp" alt="Coffee beans" class="w-100 rounded">
+    </div>
+    <div class="col-lg-6">
+      <h2 class="mb-3">Special Offers</h2>
+      <p>Don't miss out on exclusive deals! Enjoy limited-time discounts on selected coffees, equipment, and more.</p>
+      <p>We regularly update our offers to give you the best value. Whether you're a coffee lover or gifting someone special, there's always something waiting for you.</p>
+      <p><strong>Sign up now</strong> to unlock extra perks and be the first to hear about our newest promotions.</p>
+      <a href="offers.html" class="btn btn-success">View Offers</a>
     </div>
   </div>
 </section>
@@ -206,49 +111,36 @@
 <section class="my-5">
   <div class="container">
     <h2 class="text-center">Featured Coffee Bean Products</h2>
-    <p class="text-center">Discover our selection of <strong>premium coffee beans</strong> sourced from the finest regions around the world.</p>
-    <div class="row">
+    <div class="row no-wrap">
       <!-- Coffee Bean 1 -->
       <div class="col-md-4 text-center position-relative product-card">
         <div class="image-container">
-          <img src="images/coffee4.jpg" class="product-image" alt="Arabica Coffee Beans">
-          <div class="overlay">
-            <a href="coffee.html" class="btn btn-overlay">View Details</a>
-          </div>
+          <img src="images/coffee1.jpg" class="product-image" alt="Arabica Coffee Beans">
         </div>
-        <h5>Arabica Coffee Beans</h5>
-        <p>$12.00 - $36.00</p>
-        <p>A smooth and flavorful coffee, perfect for a mellow morning.</p>
+      <h5>Signature Blend</h5>
+      <p>$10.00 - $34.00</p>
       </div>
 
       <!-- Coffee Bean 2 -->
       <div class="col-md-4 text-center position-relative product-card">
         <div class="image-container">
-          <img src="images/coffee1.jpg" class="product-image" alt="Robusta Coffee Beans">
-          <div class="overlay">
-            <a href="coffee.html" class="btn btn-overlay">View Details</a>
-          </div>
+          <img src="images/coffee2.jpg" class="product-image" alt="Arabica Coffee Beans">
         </div>
-        <h5>Robusta Coffee Beans</h5>
-        <p>$10.00 - $34.00</p>
-        <p>Bold and strong, ideal for those who love a rich flavor.</p>
+        <h5>Colombian Supremo</h5>
+        <p>$12.00 - $36.00</p>
       </div>
 
       <!-- Coffee Bean 3 -->
       <div class="col-md-4 text-center position-relative product-card">
         <div class="image-container">
-          <img src="images/coffee6.jpg" class="product-image" alt="Sumatra Coffee Beans">
-          <div class="overlay">
-            <a href="coffee.html" class="btn btn-overlay">View Details</a>
-          </div>
+          <img src="images/coffee3.jpg" class="product-image" alt="Arabica Coffee Beans">
         </div>
-        <h5>Sumatra Coffee Beans</h5>
-        <p>$14.00 - $39.00</p>
-        <p>Earthy and herbal, a unique taste that stands out.</p>
+        <h5>Italian Roast</h5>
+        <p>$14.00 - $40.00</p>
       </div>
     </div>
     <div class="d-flex justify-content-center align-items-center">
-      <button class="specialbutton"><a href="coffee.html" class="text-decoration-none">View All Coffee Beans</a></button>
+      <a href="coffee.html" class="btn btn-success text-decoration-none">Shop Now <i class="fa-solid fa-cart-shopping"></i></a>
     </div>    
   </div>
 </section>
@@ -256,71 +148,53 @@
 <!-- Featured Equipment Section -->
 <section class="my-5">
   <div class="container">
-    <h2 class="text-center">Featured Equipment</h2>
-    <p class="text-center">Explore our range of <strong>premium coffee-making equipment</strong> designed for enthusiasts and professionals alike.</p>
-    <div class="row">
+    <h2 class="text-center">Featured Equipments</h2>
+    <div class="row no-wrap">
       <!-- Equipment 1 -->
-      <div class="col-md-4 text-center position-relative product-card mb-4">
+      <div class="col-md-4 text-center position-relative product-card">
         <div class="image-container">
-          <img src="images/coffee_scale.jpg" class="product-image" alt="Digital Coffee Scale">
-          <div class="overlay">
-            <a href="equipment.html" class="btn btn-overlay">View Details</a>
-          </div>
+          <img src="images/coffee_scale.jpg" class="product-image" alt="Arabica Coffee Beans">
         </div>
         <h5>Digital Coffee Scale</h5>
-        <p>$29.99</p>
-        <p>Precision weighing for perfect coffee measurements every time.</p>
+        <p>$25</p>
       </div>
 
       <!-- Equipment 2 -->
-      <div class="col-md-4 text-center position-relative product-card mb-4">
+      <div class="col-md-4 text-center position-relative product-card">
         <div class="image-container">
-          <img src="images/milk_frother.jpg" class="product-image" alt="French Press">
-          <div class="overlay">
-            <a href="equipment.html" class="btn btn-overlay">View Details</a>
-          </div>
+          <img src="images/milk_frother.jpg" class="product-image" alt="Arabica Coffee Beans">
         </div>
         <h5>Milk Frother</h5>
-        <p>$24.99</p>
-        <p>Classic brewing method for rich and full-bodied coffee flavor.</p>
+        <p>$20</p>
       </div>
 
       <!-- Equipment 3 -->
-      <div class="col-md-4 text-center position-relative product-card mb-4">
+      <div class="col-md-4 text-center position-relative product-card">
         <div class="image-container">
-          <img src="images/espresso machine.jpg" class="product-image" alt="Espresso Machine">
-          <div class="overlay">
-            <a href="equipment.html" class="btn btn-overlay">View Details</a>
-          </div>
+          <img src="images/espresso_machine.jpg" class="product-image" alt="Arabica Coffee Beans">
         </div>
         <h5>Espresso Machine</h5>
-        <p>$199.99</p>
-        <p>High-quality espresso machine for barista-level brewing at home.</p>
+        <p>$500</p>
       </div>
     </div>
     <div class="d-flex justify-content-center align-items-center">
-      <button class="specialbutton"><a href="equipment.html" class="text-decoration-none">View All Equipment</a></button>
+      <a href="equipment.html" class="btn btn-success text-decoration-none">Shop Now <i class="fa-solid fa-cart-shopping"></i></a>
     </div>    
   </div>
 </section>
 
-
-<!-- Special Offers Section -->
-<section class="d-flex align-items-center my-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 d-flex flex-column justify-content-center mb-4">
-        <h2>Special Offers</h2>
-        <p>Enjoy exclusive discounts and limited-time offers on select items!</p>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, ut voluptatibus iure sequi facilis doloremque consequatur corrupti veniam placeat, fuga ipsam eius vel!</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus consequuntur esse incidunt rerum sunt enim voluptas. Tempore impedit dolor quaerat cum, non id neque nostrum, ut accusantium nulla magni.</p>
-        <div>
-          <button class="specialbutton"><a href="coffee.html" class="text-decoration-none">View Offers</a></button>
-        </div>    
-      </div>
-      <div class="col-md-6">
-        <video src="images/coffeebean.mp4" autoplay muted loop class="w-100"></video>
-      </div>
+<!-- Video and Text Section -->
+<section class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-lg-6 mb-3 mb-lg-0">
+      <img src="images/craft.webp" alt="Coffee beans" class="w-100 rounded">
+    </div>
+    <div class="col-lg-6">
+      <h2 class="mb-3">Experience Our Craft</h2>
+      <p>At Bean Boutique, our beans are more than just coffee. They're a product of dedication and artistry crafted by expert hands and roasted to perfection.</p>
+      <p>Feel the aroma, taste the richness, and embrace a new way of experiencing coffee in every sip.</p>
+      <p>Join our journey to redefine quality and sustainability, one cup at a time.</p>
+      <a href="offers.html" class="btn btn-success">View Offers</a>
     </div>
   </div>
 </section>
@@ -332,129 +206,108 @@
     <div class="row">
       <div class="col-md-3">
         <i class="fa-solid fa-heart guarantee-icon"></i>
-        <h5>Quick, Accessible and Reliable</h5>
-        <p>Servicing clientele with an immense degree of care and quality.</p>
+        <h5>Fast & Reliable Service</h5>
+        <p>Always here when you need us. Quick and dependable support.</p>
       </div>
       
       <div class="col-md-3">
         <i class="fa-solid fa-globe guarantee-icon"></i>
-        <h5>Myanmar Based and Owned</h5>
-        <p>Owned and operated by Myanmar families. Friendly customers service.</p>
+        <h5>Locally Operated</h5>
+        <p>Run by people who care about the community. Friendly customers service.</p>
       </div>
 
       <div class="col-md-3">
         <i class="fa-solid fa-business-time guarantee-icon"></i>
-        <h5>Same Day Dispatch</h5>
-        <p>Freshly roasted to your order. Myanmar Post real-time tracking provided</p>
+        <h5>Same-Day Shipping</h5>
+        <p>Orders go out fast, so you don’t have to wait long.</p>
       </div>
 
       <div class="col-md-3">
         <i class="fa-solid fa-shield guarantee-icon"></i>
-        <h5>Fast and Secure Payments</h5>
+        <h5>Safe & Easy Payments</h5>
         <p>Easy to use Checkout Process. Secured payments and money-back guarantee.</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- Guarantees Section -->
 <section class="container my-5 text-center">
-  <h2>Testimonials</h2>
+  <h2>What Our Customers Say</h2>
   <div class="testimonial-section">
     <div class="testimonial-slideshow">
         <div class="profiles">
-            <div class="profile active" data-name="DaHyun" data-text="We have used the Coffee Beans shop for several orders of whole coffee beans, we have never been disappointed. The service is AMAZING! The website is easy to use, orders are filled promptly and the order is always correct. The coffee itself is spectacular! We have enjoyed many cups of coffee from the range they have. We Will definitely continue to purchase our coffee beans from the Coffee Bean Shop.">
+            <div class="profile active" data-name="DaHyun" data-text="We have used the Coffee Beans shop for several orders of whole coffee beans, we have never been disappointed.">
                 <img src="images/DaHyun.png" alt="Profile 1">
             </div>
-            <div class="profile" data-name="HyeRin" data-text="Absolutely love these guys! The aroma is incredible ® Daily roasted coffee beans, best coffee beans in Australia, sast delivery. Very good price! Highly recommend it. I got a great deal on the 3kg packs for our office. Thanks Mac for great service.">
+            <div class="profile" data-name="HyeRin" data-text="Absolutely love these guys! Very good price! Highly recommend it. I got a great deal on the 3kg packs for our office.">
                 <img src="images/HyeRin.png" alt="Profile 2">
             </div>
-            <div class="profile" data-name="Jiwoo" data-text="I have tried most of the single origin beans you have available and have settled on the Brazil Dulce, I thought I would try the Sweet Valley Blend however had to make a significant adjustment to my grinder on the finer side to get reasonable pressure from my machine, all of the other beans I've tried only required minor adjustments so I don't know what is going on there ! other than that always fast delivery and I will continue to enjoy my single origin Dulce no more blends for me.">
+            <div class="profile" data-name="Jiwoo" data-text="I love supporting local businesses also, so I get a good feeling about this on top of supporting my caffeine addiction.">
                 <img src="images/Jiwoo.png" alt="Profile 3">
             </div>
-            <div class="profile" data-name="YuBin" data-text="Exceptional service aside (which is delivered in spades), the beans themselves are phenomenal. Masterfully roasted, packaged nicely, delivered quickly - it's all there. I love supporting local businesses also, so I get a good feeling about this on top of supporting my caffeine addiction. Without Coffee Beans Shop, I would probably be an awful human being - and possibly violent. They are keeping the public safe with their delicious beans!">
+            <div class="profile" data-name="YuBin" data-text="The beans themselves are phenomenal. Masterfully roasted, packaged nicely, delivered quickly.">
                 <img src="images/YuBin.png" alt="Profile 4">
             </div>
-            <div class="profile" data-name="Mayu" data-text="We came across the Coffee Beans Shop after running out of our regular coffee beans. Stoked to find a local supplier. We purchased the Organic Peru and the Gold Blend. These beans are head and shoulders above anything else we have tried, Oh and we have tried a lot over the years. Great friendly service. Do yourself a favour and give them a go.... you won't buy anywhere else after trying these beans.">
+            <div class="profile" data-name="Mayu" data-text="I purchased the French Vanilla and the Signature Blend. These beans are head and shoulders above anything else we have tried.">
                 <img src="images/Mayu.png" alt="Profile 5">
             </div>
         </div>
     </div>
     <div class="testimonial-text">
-        <h5 id="testimonial-name"></h5>
-        <p id="testimonial-paragraph"></p>
+        <span id="testimonial-name"><!-- Filled by JS --></span>
+        <br><br>
+        <span id="testimonial-paragraph"><!-- Filled by JS --></span>
     </div>
   </div>
 </section>
 
-<!-- Thank You Section -->
-<section class="container my-5 text-center">
-  <h2>THANKS FOR STOPPING AT COFFEE BEANS SHOP</h2>
-  <p>We’re thrilled to serve you our finest selection of coffee beans, equipment, and brewing essentials.</p>
-  <p>We hope to make every cup a memorable experience. Explore, enjoy, and savor the unique flavors we have to offer.</p>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit unde tenetur repudiandae. Dicta reiciendis, error, molestiae reprehenderit voluptatum officiis est rem velit optio voluptates ut vitae laudantium, eos nisi earum ipsum! Cumque fugit sunt quibusdam accusamus quos officia doloremque harum maiores quisquam, eius, eligendi voluptates assumenda repellat, aut quidem iste molestias unde nam et error.</p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae amet explicabo voluptas totam laudantium velit reiciendis, possimus et cupiditate maiores ea voluptatibus.</p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti amet fugit eveniet?</p>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, pariatur sit. Repudiandae qui, tenetur neque consequuntur, ipsum consequatur, est quae architecto libero nihil aspernatur ab impedit vitae corrupti distinctio saepe aliquid dolorem voluptatem explicabo facilis magnam voluptatibus totam! Magni non hic corporis velit animi vero.</p>
-</section>
+  <!-- Footer -->
+<footer class="text-white text-center py-4 shadow-lg" style="background-color: darkred;">
+  <div class="container">
+    <div class="row text-start">
+      <!-- About -->
+      <div class="col-md-4">
+        <h5 class="fw-bold">
+          Bean Boutique <i class="fa-solid fa-mug-hot"></i>
+        </h5>
+        <p>Every cup tells a story, join our journey and explore the world of specialty coffee.</p>
+      </div>
 
- <!-- Footer -->
-<footer class="text-white text-center py-4 shadow-lg" style="background-color: skyblue;">
-  <p class="mb-2">&copy; 2024 Bean Boutique. All rights reserved.</p>
-  <div class="footer-social-media">
-    <a href="#" aria-label="Instagram" class="text-white mx-2 h5"><i class="fab fa-instagram"></i></a>
-    <a href="#" aria-label="Facebook" class="text-white mx-2 h5"><i class="fab fa-facebook"></i></a>
-    <a href="#" aria-label="Twitter" class="text-white mx-2 h5"><i class="fab fa-twitter"></i></a>
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h5 class="fw-bold">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-light text-decoration-none footer-link">Home</a></li>
+          <li><a href="signup.html" class="text-light text-decoration-none footer-link">Sign Up</a></li>
+          <li><a href="events.html" class="text-light text-decoration-none footer-link">Events & Workshops</a></li>
+          <li><a href="offers.html" class="text-light text-decoration-none footer-link">Special Offers</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter & Social -->
+      <div class="col-md-4">
+        <h5 class="fw-bold">Subscribe</h5>
+        <form id="newsletterForm" class="d-flex mb-3" onsubmit="event.preventDefault(); alert('You’ve successfully subscribed to Bean Boutique!');">
+          <input type="email" class="form-control me-2" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn-light" type="submit">Join</button>
+        </form>
+        <div>
+          <a href="#" class="text-light me-3 social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light me-3 social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-light me-3 social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="text-light me-3 social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-light">
+    <div class="text-center small">
+      &copy; 2025 Bean Boutique. All rights reserved.
+    </div>
   </div>
 </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Initial setup on page load
-    window.onload = function() {
-      updateCartBadge();
-    };
-
-    // Cart badge update function (same as before)
-    function updateCartBadge() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-      const cartBadge = document.getElementById('cart-badge');
-      cartBadge.innerText = totalItems;
-
-      if (totalItems > 0) {
-        cartBadge.style.display = 'inline';
-      } else {
-        cartBadge.style.display = 'none';
-      }
-    } 
-
-    const profiles = document.querySelectorAll('.profile');
-const testimonialParagraph = document.getElementById('testimonial-paragraph');
-const testimonialName = document.getElementById('testimonial-name');
-
-let currentIndex = 0;
-
-function showProfile(index) {
-    profiles.forEach((profile, i) => {
-        profile.classList.remove('active');
-        if (i === index) {
-            profile.classList.add('active');
-            testimonialParagraph.textContent = profile.getAttribute('data-text');
-            testimonialName.textContent = profile.getAttribute('data-name');
-        }
-    });
-}
-
-function nextProfile() {
-    currentIndex = (currentIndex + 1) % profiles.length; // Loop back to start
-    showProfile(currentIndex);
-}
-
-setInterval(nextProfile, 3000); // Change profile every 3 seconds
-showProfile(currentIndex); // Show the initial profile
-
-  </script>
+  <script src="script.js"></script>
+  <script src="common.js"></script>
 </body>
 </html>

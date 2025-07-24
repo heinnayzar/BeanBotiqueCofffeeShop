@@ -1,92 +1,148 @@
-body {
-  font-family: "Arima", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  background-color: white;
+.container .product-card {
+    padding: 15px;
 }
 
-.nav-link {
-  position: relative;
+.product-card .image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1/1;
 }
 
-#cart-badge {
-  position: inherit;
-  top: -10px; 
-  right: -1px; 
-  font-size: 0.6em;
-  padding: 0.1em 0.5em; 
-}
-  
-  footer {
-    background-color: #f8f9fa;
-  }
-  
-  .social-media a {
-    margin: 0 10px;
-    text-decoration: none;
-  }
-
-  /* From Uiverse.io by abrahamcalsin */ 
-.specialbutton {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  background: #183153;
-  font-family: "Arima", system-ui;
-  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  cursor: pointer;
-  border: none;
+.product-card .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.specialbutton:after {
-  content: " ";
-  width: 0%;
-  height: 100%;
-  /* background: #ffd401; */
-  background-color: skyblue;
-  position: absolute;
-  transition: all 0.4s ease-in-out;
-  right: 0;
+.product-card h5,
+.product-card p {
+    margin-top: 10px;
 }
 
-.specialbutton:hover::after {
-  right: auto;
-  left: 0;
-  width: 100%;
+.testimonial-section {
+    text-align: center;
+    margin: 30px 0px;
 }
 
-.specialbutton a {
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-  padding: 9px 12px;
-  color: #fff;
-  font-size: 1em;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  z-index: 20;
-  transition: all 0.3s ease-in-out;
+.profiles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
 }
 
-.specialbutton:hover a {
-  color: #183153;
-  animation: scaleUp 0.3s ease-in-out;
+.profile {
+    margin: 10px;
+    transition: transform 0.5s, opacity 0.5s;
 }
 
-@keyframes scaleUp {
-  0% {
-    transform: scale(1);
-  }
+.profile img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
 
-  50% {
-    transform: scale(0.95);
-  }
+.profile.active {
+    transform: scale(1.5);
+    opacity: 1;
+}
 
-  100% {
-    transform: scale(1);
-  }
+.profile:not(.active) {
+    opacity: 0.5;
+}
+
+.testimonial-text {
+    margin: 30px auto;
+    max-width: 700px;
+}
+
+.custom-modal {
+  background: #fff8f0;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.custom-modal h4 {
+  font-size: 1.7rem;
+  color: #5c3d2e;
+  font-weight: bold;
+}
+
+.custom-modal p {
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.custom-modal .btn {
+  border-radius: 25px;
+  padding: 10px 24px;
+}
+
+@media (max-width: 992px) {
+    .testimonial-text {
+        margin: 10px;
+    }
+}
+
+.guarantee-icon {
+    font-size: 2rem;
+    margin: 15px 0px;
+}
+
+.custom-notification {
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 0;
+}
+
+.btn {
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+}
+
+.custom-img-height {
+    height: 600px;
+    object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+    .custom-img-height {
+        max-height: 400px;
+        object-fit: cover;
+    }
+    
+    .container .product-card {
+        padding: 0 25px;
+    }
+
+    section.d-flex {
+        flex-direction: column;
+    }
+
+    .row.no-wrap {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 15px;
+    }
+
+    .row.no-wrap > .col-md-4 {
+        flex: 0 0 auto;
+        width: 80%;
+    }
+
+    .row.no-wrap::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-img-height {
+        max-height: 200px;
+        object-fit: cover;
+    }
 }

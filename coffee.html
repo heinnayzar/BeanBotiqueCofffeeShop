@@ -6,168 +6,45 @@
   <title>Bean Boutique - Coffee Selection</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="style.css">
-  <style>
-
-    /* Custom style for coffee list */
-    .coffee-item {
-      display: flex;
-      margin-bottom: 25px;
-      padding: 15px;
-      /* border: 1px solid #ddd; */
-      border-radius: 5px;
-      /* background-color: #f9f9f9; */
-      background-color: white;
-      flex-direction: row; /* Default to row for larger screens */
-    }
-
-    /* Coffee image */
-    .coffee-item img {
-      width: 25%;
-      height: auto; /* Maintain aspect ratio */
-      object-fit: cover;
-      margin-right: 20px;
-      border-radius: 5px;
-      align-self: center; /* Center vertically */
-    }
-
-    /* Coffee details on the right */
-    .coffee-details {
-      width: 75%; /* Maintain proportions */
-      display: flex;
-      flex-direction: column;
-      /* justify-content: space-around; */
-    }
-
-    .coffee-details h5 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .coffee-details p {
-      font-size: 1rem;
-    }
-
-    .coffee-details ul {
-      padding-left: 20px;
-      margin-bottom: 10px;
-    }
-
-    .coffee-details .price {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    .btn-group button {
-      flex: 1;
-      min-width: 100px;
-    }
-
-    /* Grind Type and Size Buttons Group */
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    /* Quantity controls */
-    .quantity-controls {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .quantity-controls button {
-      width: 35px;
-      height: 35px;
-    }
-
-    /* Selected button style */
-    .selected {
-      background-color: black !important;
-      color: white !important;
-    }
-
-    /* Responsive design: Image and font sizes for smaller screens */
-    @media (max-width: 768px) {
-
-      ul {
-        list-style: none;
-      }
-
-      .coffee-item {
-        flex-direction: column; /* Stack image on top for smaller screens */
-        align-items: center; /* Center align items */
-      }
-
-      .coffee-item img {
-        width: 50%; /* Smaller image width on small screens */
-        margin-right: 0; /* Remove right margin */
-        margin-bottom: 15px; /* Space between image and details */
-      }
-
-      .coffee-details {
-        width: 100%; /* Full width for details */
-        text-align: center; /* Center text for details */
-      }
-
-      .coffee-details h5 {
-        font-size: 1.5rem; /* Keep heading font size */
-      }
-
-      .coffee-details p {
-        font-size: 0.9rem; /* Smaller paragraph font */
-      }
-
-      .coffee-details .price {
-        font-size: 1rem; /* Smaller price font */
-      }
-
-      .btn-group .btn {
-        flex: 0 0 48%; 
-        margin-bottom: 10px;
-      }
-
-      .quantity-controls {
-        flex-direction: column; /* Stack quantity controls */
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="coffee.css">
 </head>
 <body>
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Bean Boutique</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <a class="navbar-brand" href="#">Bean Boutique <i class="fa-solid fa-mug-hot"></i></a>
+        <button class="navbar-toggler my-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="coffee.html">Coffee</a></li>
-                <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
-                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
-                <li class="nav-item"><a class="nav-link" href="signup.html">SignUp</a></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.html">Cart <span id="cart-badge" class="badge bg-danger" style="display: none;">0</span></a>
-                </li>
+            <ul class="navbar-nav ms-auto gap-3">
+              <li class="nav-item">
+                <div class="input-group animated-search">
+                  <input type="text" id="searchInput" class="form-control" placeholder="Search on page..." aria-label="Search">
+                  <span class="input-group-text"><i class="bi bi-search"></i></span>
+                </div>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link active" href="coffee.html">Coffee</a></li>
+              <li class="nav-item"><a class="nav-link" href="equipment.html">Equipments</a></li>
+              <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+              <li class="nav-item"><a class="nav-link" href="offers.html">Offers</a></li>
+              <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="cart.html">Cart <span id="cart-badge" class="badge bg-danger" style="display: none;">0</span></a>
+              </li>
             </ul>
         </div>
     </div>
   </nav>
 
-
   <!-- Coffee Selection Header -->
   <header class="container mt-5 text-center">
     <h2 class="mb-4">Coffee Bean Selection</h2>
-    <p>Discover our range of unique blends and single-origin coffees, each crafted to perfection.</p>
   </header>
 
   <!-- Search Bar and Clear Button (in one line) -->
@@ -184,7 +61,6 @@
 
   <!-- Coffee Catalogue Section -->
   <section id="coffee-catalogue" class="container mt-5">
-
     <!-- No Results Message -->
     <p id="no-results" class="text-center text-danger" style="display:none;">No products found matching your search.</p>
 
@@ -197,8 +73,8 @@
           <h5>Signature Blend</h5>
           <p>A balanced blend with rich chocolate notes and a hint of caramel. Perfect for any time of day.</p>
           <ul>
-            <li><strong>Tasting Notes:</strong> Chocolate, Caramel, Nutty</li>
-            <li><strong>Brewing Methods:</strong> Drip, French Press, Espresso</li>
+            <li>Tasting Notes: Chocolate, Caramel, Nutty</li>
+            <li>Brewing Methods: Drip, French Press, Espresso</li>
           </ul>
           
           <!-- Grind Type Buttons -->
@@ -222,14 +98,13 @@
           <p class="price">Price: $<span id="price1">10.00</span></p>
           <!-- Quantity Controls -->
           <div class="w-100 mb-3 d-flex align-items-center">
-            <div class="input-group me-2" style="flex: 0 0 30%;">
+            <div class="input-group me-2" style="flex: 0 0 40%;">
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(1, -1)">-</button>
                 <input type="number" id="quantity1" value="1" min="1" class="form-control text-center" readonly>
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(1, 1)">+</button>
             </div>
-            
-            <div style="flex: 0 0 70%;">
-              <button class="specialbutton w-100" id="shopNow1" onclick="addToCart(1)"><a class="text-decoration-none">Add To Cart</a></button>
+            <div style="flex: 0 0 60%;">
+              <button id="shopNow1" class="w-100 btn btn-success" onclick="addToCart(1)">Add To Cart <i class="fa-solid fa-cart-plus"></i></button>
             </div>    
           </div>                    
         </div>
@@ -242,8 +117,8 @@
           <h5>Colombian Supremo</h5>
           <p>A smooth, full-bodied coffee with bright acidity and fruity undertones, perfect for a refreshing start to your day.</p>
           <ul>
-            <li><strong>Tasting Notes:</strong> Fruity, Citrus, Floral</li>
-            <li><strong>Brewing Methods:</strong> Drip, Pour Over, Espresso</li>
+            <li>Tasting Notes: Fruity, Citrus, Floral</li>
+            <li>Brewing Methods: Drip, Pour Over, Espresso</li>
           </ul>
           
           <p>Grind Type</p>
@@ -264,14 +139,14 @@
 
           <p class="price">Price: $<span id="price2">12.00</span></p>
           <div class="w-100 mb-3 d-flex align-items-center">
-            <div class="input-group me-2" style="flex: 0 0 30%;">
+            <div class="input-group me-2" style="flex: 0 0 40%;">
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(2, -1)">-</button>
                 <input type="number" id="quantity2" value="1" min="1" class="form-control text-center" readonly>
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(2, 1)">+</button>
             </div>
             
-            <div style="flex: 0 0 70%;">
-              <button class="specialbutton w-100" id="shopNow2" onclick="addToCart(2)"><a class="text-decoration-none">Add To Cart</a></button>
+            <div style="flex: 0 0 60%;">
+               <button id="shopNow2" class="w-100 btn btn-success" onclick="addToCart(2)">Add To Cart <i class="fa-solid fa-cart-plus"></i></button>
             </div>    
           </div>                    
         </div>
@@ -284,8 +159,8 @@
           <h5>Italian Roast</h5>
           <p>A dark, bold roast with a smoky finish, perfect for those who love strong coffee.</p>
           <ul>
-            <li><strong>Tasting Notes:</strong> Dark Chocolate, Smoky, Bold</li>
-            <li><strong>Brewing Methods:</strong> French Press, Espresso, Moka Pot</li>
+            <li>Tasting Notes: Dark Chocolate, Smoky, Bold</li>
+            <li>Brewing Methods: French Press, Espresso, Moka Pot</li>
           </ul>
           
           <p>Grind Type</p>
@@ -306,14 +181,14 @@
 
           <p class="price">Price: $<span id="price3">14.00</span></p>
           <div class="w-100 mb-3 d-flex align-items-center">
-            <div class="input-group me-2" style="flex: 0 0 30%;">
+            <div class="input-group me-2" style="flex: 0 0 40%;">
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(3, -1)">-</button>
                 <input type="number" id="quantity3" value="1" min="1" class="form-control text-center" readonly>
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(3, 1)">+</button>
             </div>
             
-            <div style="flex: 0 0 70%;">
-              <button class="specialbutton w-100" id="shopNow3" onclick="addToCart(3)"><a class="text-decoration-none">Add To Cart</a></button>
+            <div style="flex: 0 0 60%;">
+               <button id="shopNow3" class="w-100 btn btn-success" onclick="addToCart(3)">Add To Cart <i class="fa-solid fa-cart-plus"></i></button>
             </div>    
           </div>                    
         </div>
@@ -326,8 +201,8 @@
           <h5>Ethiopian Yirgacheffe</h5>
           <p>A light, floral coffee with vibrant acidity and complex flavors, perfect for connoisseurs.</p>
           <ul>
-            <li><strong>Tasting Notes:</strong> Floral, Berry, Citrus</li>
-            <li><strong>Brewing Methods:</strong> Pour Over, Chemex, French Press</li>
+            <li>Tasting Notes: Floral, Berry, Citrus</li>
+            <li>Brewing Methods: Pour Over, Chemex, French Press</li>
           </ul>
           
           <p>Grind Type</p>
@@ -348,14 +223,14 @@
 
           <p class="price">Price: $<span id="price4">15.00</span></p>
           <div class="w-100 mb-3 d-flex align-items-center">
-            <div class="input-group me-2" style="flex: 0 0 30%;">
+            <div class="input-group me-2" style="flex: 0 0 40%;">
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(4, -1)">-</button>
                 <input type="number" id="quantity4" value="1" min="1" class="form-control text-center" readonly>
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(4, 1)">+</button>
             </div>
             
-            <div style="flex: 0 0 70%;">
-              <button class="specialbutton w-100" id="shopNow4" onclick="addToCart(4)"><a class="text-decoration-none">Add To Cart</a></button>
+            <div style="flex: 0 0 60%;">
+               <button id="shopNow4" class="w-100 btn btn-success" onclick="addToCart(4)">Add To Cart <i class="fa-solid fa-cart-plus"></i></button>
             </div>    
           </div>                    
         </div>
@@ -368,8 +243,8 @@
           <h5>Sumatra Mandheling</h5>
           <p>A rich and earthy coffee with herbal notes and a full body, perfect for a cozy evening.</p>
           <ul>
-            <li><strong>Tasting Notes:</strong> Earthy, Herbal, Chocolate</li>
-            <li><strong>Brewing Methods:</strong> French Press, Cold Brew, Espresso</li>
+            <li>Tasting Notes: Earthy, Herbal, Chocolate</li>
+            <li>Brewing Methods: French Press, Cold Brew, Espresso</li>
           </ul>
           
           <p>Grind Type</p>
@@ -390,14 +265,14 @@
 
           <p class="price">Price: $<span id="price5">16.00</span></p>
           <div class="w-100 mb-3 d-flex align-items-center">
-            <div class="input-group me-2" style="flex: 0 0 30%;">
+            <div class="input-group me-2" style="flex: 0 0 40%;">
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(5, -1)">-</button>
                 <input type="number" id="quantity5" value="1" min="1" class="form-control text-center" readonly>
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(5, 1)">+</button>
             </div>
             
-            <div style="flex: 0 0 70%;">
-              <button class="specialbutton w-100" id="shopNow5" onclick="addToCart(5)"><a class="text-decoration-none">Add To Cart</a></button>
+            <div style="flex: 0 0 60%;">
+               <button id="shopNow5" class="w-100 btn btn-success" onclick="addToCart(5)">Add To Cart <i class="fa-solid fa-cart-plus"></i></button>
             </div>    
           </div>                    
         </div>
@@ -410,8 +285,8 @@
           <h5>French Vanilla</h5>
           <p>A creamy, sweet blend with hints of vanilla that creates a comforting and indulgent experience.</p>
           <ul>
-            <li><strong>Tasting Notes:</strong> Vanilla, Creamy, Sweet</li>
-            <li><strong>Brewing Methods:</strong> Drip, French Press, Espresso</li>
+            <li>Tasting Notes: Vanilla, Creamy, Sweet</li>
+            <li>Brewing Methods: Drip, French Press, Espresso</li>
           </ul>
           
           <p>Grind Type</p>
@@ -432,18 +307,19 @@
 
           <p class="price">Price: $<span id="price6">11.00</span></p>
           <div class="w-100 mb-3 d-flex align-items-center">
-            <div class="input-group me-2" style="flex: 0 0 30%;"> 
+            <div class="input-group me-2" style="flex: 0 0 40%;"> 
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(6, -1)">-</button>
                 <input type="number" id="quantity6" value="1" min="1" class="form-control text-center" readonly>
                 <button class="btn btn-outline-secondary" type="button" onclick="changeQuantity(6, 1)">+</button>
             </div>
             
-            <div style="flex: 0 0 70%;">
-              <button class="specialbutton w-100" id="shopNow6" onclick="addToCart(6)"><a class="text-decoration-none">Add To Cart</a></button>
+            <div style="flex: 0 0 60%;">
+               <button id="shopNow6" class="w-100 btn btn-success" onclick="addToCart(6)">Add To Cart <i class="fa-solid fa-cart-plus"></i></button>
             </div>    
           </div>                    
         </div>
       </div>
+    </div>
   </section>
 
   <!-- Alert Modal -->
@@ -464,175 +340,53 @@
     </div>
   </div>
 
-  <!-- Footer -->
-<footer class="text-white text-center py-4 shadow-lg" style="background-color: skyblue;">
-  <p class="mb-2">&copy; 2024 Bean Boutique. All rights reserved.</p>
-  <div class="footer-social-media">
-    <a href="#" aria-label="Instagram" class="text-white mx-2 h5"><i class="fab fa-instagram"></i></a>
-    <a href="#" aria-label="Facebook" class="text-white mx-2 h5"><i class="fab fa-facebook"></i></a>
-    <a href="#" aria-label="Twitter" class="text-white mx-2 h5"><i class="fab fa-twitter"></i></a>
+ <!-- Footer -->
+<footer class="text-white text-center py-4 shadow-lg" style="background-color: darkred;">
+  <div class="container">
+    <div class="row text-start">
+      <!-- About -->
+      <div class="col-md-4">
+        <h5 class="fw-bold">
+          Bean Boutique <i class="fa-solid fa-mug-hot"></i>
+        </h5>
+        <p>Every cup tells a story, join our journey and explore the world of specialty coffee.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4">
+        <h5 class="fw-bold">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-light text-decoration-none footer-link">Home</a></li>
+          <li><a href="signup.html" class="text-light text-decoration-none footer-link">Sign Up</a></li>
+          <li><a href="events.html" class="text-light text-decoration-none footer-link">Events & Workshops</a></li>
+          <li><a href="offers.html" class="text-light text-decoration-none footer-link">Special Offers</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter & Social -->
+      <div class="col-md-4">
+        <h5 class="fw-bold">Subscribe</h5>
+        <form id="newsletterForm" class="d-flex mb-3" onsubmit="event.preventDefault(); alert('You’ve successfully subscribed to Bean Boutique!');">
+          <input type="email" class="form-control me-2" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn-light" type="submit">Join</button>
+        </form>
+        <div>
+          <a href="#" class="text-light me-3 social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light me-3 social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-light me-3 social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="text-light me-3 social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="border-light">
+    <div class="text-center small">
+      &copy; 2025 Bean Boutique. All rights reserved.
+    </div>
   </div>
 </footer>
 
-  <!-- JavaScript for Coffee Selection -->
-  <script>
-    let selectedGrind = {};
-    let selectedSize = {};
-    let prices = [10, 12]; // Initial prices for each coffee
-    let quantities = [1, 1]; // Initial quantities for each coffee
-
-    function chooseGrind(coffeeId, grindType, event) {
-      // Deselect all grind buttons
-      const buttons = event.target.parentNode.children;
-      for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('selected');
-      }
-      // Select the chosen grind
-      event.target.classList.add('selected');
-      selectedGrind[coffeeId] = grindType;
-    }
-
-    function chooseSize(coffeeId, size, price, event) {
-      // Deselect all size buttons
-      const buttons = event.target.parentNode.children;
-      for (let i = 0; i < buttons.length; i++) {
-        buttons[i].classList.remove('selected');
-      }
-      // Select the chosen size
-      event.target.classList.add('selected');
-      selectedSize[coffeeId] = { size: size, price: price };
-      updatePrice(coffeeId);
-    }
-
-    function changeQuantity(coffeeId, change) {
-      const quantityInput = document.getElementById(`quantity${coffeeId}`);
-      let newQuantity = parseInt(quantityInput.value) + change;
-      if (newQuantity < 1) return; // Don't allow quantity to go below 1
-      quantityInput.value = newQuantity;
-      quantities[coffeeId - 1] = newQuantity; // Update quantity
-      updatePrice(coffeeId);
-    }
-
-    function updatePrice(coffeeId) {
-      const priceElement = document.getElementById(`price${coffeeId}`);
-      if (selectedSize[coffeeId]) {
-        const selectedPrice = selectedSize[coffeeId].price;
-        const quantity = quantities[coffeeId - 1];
-        const totalPrice = selectedPrice * quantity;
-        priceElement.textContent = totalPrice.toFixed(2);
-      }
-    }
-
-    function addToCart(coffeeId) {
-    const shopNowButton = document.getElementById(`shopNow${coffeeId}`);
-
-    // Create a unique ID for each item based on coffeeId, grind type, and size
-    const itemId = `coffee-${coffeeId}-${selectedGrind[coffeeId]}-${selectedSize[coffeeId].size}`;
-
-    // Check if both grind type and size have been selected
-    if (!selectedGrind[coffeeId] || !selectedSize[coffeeId]) {
-        showAlert('Please select both grind type and size before adding to cart.');
-        return;
-    }
-
-    const item = {
-        id: itemId, // Unique identifier for this combination of coffee, grind type, and size
-        coffeeId: coffeeId,
-        name: document.querySelector(`.coffee-item[data-name="${document.querySelector(`.coffee-item:nth-child(${coffeeId})`).getAttribute('data-name')}"] h5`).innerText,
-        grindType: selectedGrind[coffeeId],
-        size: selectedSize[coffeeId].size,
-        price: selectedSize[coffeeId].price,
-        quantity: quantities[coffeeId - 1],
-        image: document.querySelector(`.coffee-item:nth-child(${coffeeId}) img`).src
-    };
-
-    // Retrieve the existing cart from localStorage or create a new array
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Check if an identical item (same grind type, size, and coffeeId) already exists in the cart
-    const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
-
-    if (existingItemIndex !== -1) {
-        // If the item exists, just update the quantity
-        cart[existingItemIndex].quantity += item.quantity;
-    } else {
-        // Otherwise, add the new item to the cart
-        cart.push(item);
-    }
-
-    // Save the updated cart back to localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Update the cart badge dynamically
-    updateCartBadge();
-
-    // Show a confirmation alert
-    showAlert(`Added ${item.quantity} of ${item.name} (${item.grindType}, ${item.size}) to your cart.`);
-}
-
-
-    function showAlert(message) {
-        document.getElementById('alertMessage').textContent = message;
-        const alertModal = new bootstrap.Modal(document.getElementById('alertModal'));
-        alertModal.show();
-    }
-
-    // Ensure the cart badge is updated when the page loads
-    document.addEventListener('DOMContentLoaded', updateCartBadge);
-
-
-    function showAlert(message) {
-      document.getElementById('alertMessage').innerText = message;
-      const alertModal = new bootstrap.Modal(document.getElementById('alertModal'));
-      alertModal.show();
-    }
-
-    function searchCoffee() {
-      const input = document.getElementById('search-coffee').value.toLowerCase();
-      const coffeeItems = document.querySelectorAll('.coffee-item');
-      let found = false;
-      coffeeItems.forEach(item => {
-        const coffeeName = item.getAttribute('data-name').toLowerCase();
-        if (coffeeName.includes(input)) {
-          item.style.display = 'flex'; // Show item
-          found = true;
-        } else {
-          item.style.display = 'none'; // Hide item
-        }
-      });
-      document.getElementById('no-results').style.display = found ? 'none' : 'block';
-    }
-
-    function clearSearch() {
-      document.getElementById('search-coffee').value = '';
-      searchCoffee();
-    }
-
-    function updateCartBadge() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-        
-        const cartBadge = document.getElementById('cart-badge');
-        cartBadge.innerText = totalItems;
-
-        // Show badge only if there are items in the cart
-        if (totalItems > 0) {
-            cartBadge.style.display = 'inline';
-        } else {
-            cartBadge.style.display = 'none';
-        }
-    }
-
-    // Call updateCartBadge when the page loads
-    window.onload = function() {
-        updateCartBadge();
-    };
-
-    // Assuming you have a button with id "shop-now" to add items
-    document.getElementById('shop-now').addEventListener('click', addToCart);
-
-  </script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="coffee.js"></script>
+  <script src="common.js"></script>
 </body>
 </html>
