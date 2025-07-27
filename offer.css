@@ -1,46 +1,53 @@
-    .offer-sections {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin-bottom: 4rem;
-    }
+/* Container for all offer cards */
+.offer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
 
-    .offer-card {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 2rem;
-      flex: 1 1 300px;
-      max-width: 450px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
+/* Individual offer card style */
+.offer-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+  flex: 1 1 300px;
+  max-width: 450px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
 
-    .offer-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    }
+/* Hover effect for offer cards */
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
 
-    .offer-card h3 {
-      color: #198754;
-      margin-bottom: 1rem;
-    }
+/* Offer card heading */
+.offer-card h3 {
+  color: #198754;
+  margin-bottom: 1rem;
+}
 
-    .offer-card p {
-      font-size: 1.125rem;
-      margin-bottom: 1.5rem;
-      color: #333;
-    }
+/* Offer card paragraph */
+.offer-card p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
 
-    .success-animation {
-      display: block;
-      font-weight: bold;
-      font-size: 1rem;
-      text-align: center;
-      padding-top: 1rem;
-    }
+/* Success message style */
+.success-animation {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  padding-top: 1rem;
+}
 
-    footer {
-      background-color: darkred;
-    }
+/* Footer background color */
+footer {
+  background-color: darkred;
+}

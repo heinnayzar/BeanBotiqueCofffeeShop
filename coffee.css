@@ -1,4 +1,4 @@
-    /* Custom style for coffee list */
+/* Custom style for coffee list */
 .coffee-item {
     display: flex;
     margin-bottom: 20px;
@@ -9,7 +9,7 @@
 }
 
 /* Coffee image */
-.coffee-item img {
+.coffee-item img{
     width: 22%;
     height: auto; /* Maintain aspect ratio */
     object-fit: cover;

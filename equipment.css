@@ -1,97 +1,105 @@
-    .nav-link {
-      position: relative;
-    }
+/* Style for navigation links */
+.nav-link {
+  position: relative; /* Allows positioning of pseudo-elements or dropdowns */
+}
 
-    /* Custom style for equipment list */
-    .equipment-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      padding: 15px;
-      /* border: 1px solid #ddd; */
-      border-radius: 5px;
-      /* background-color: #f9f9f9; */
-      background-color: ghostwhite;
-    }
+/* Custom style for each equipment item in the list */
+.equipment-item {
+  display: flex; /* Aligns image and details side by side */
+  align-items: center; /* Vertically centers items */
+  justify-content: space-between; /* Puts space between image and text */
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: ghostwhite; /* Light background for contrast */
+}
 
-    /* Equipment image on the left */
-    .equipment-item img {
-      width: 30%;
-      height: auto;
-      object-fit: cover;
-      margin-right: 20px;
-      border-radius: 5px;
-    }
+/* Equipment image styling */
+.equipment-item img {
+  width: 30%; /* Image takes 30% of the container width */
+  height: auto;
+  object-fit: cover; /* Ensures image covers area without distortion */
+  margin-right: 20px;
+  border-radius: 5px;
+}
 
-    /* Equipment details on the right */
-    .equipment-details {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+/* Container for equipment text content */
+.equipment-details {
+  flex-grow: 1; /* Allows the details section to take remaining space */
+  display: flex;
+  flex-direction: column; /* Stacks title, description, price vertically */
+  justify-content: space-between;
+}
 
-    .equipment-details h5 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
+/* Equipment title styling */
+.equipment-details h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
 
-    .equipment-details p {
-      font-size: 1rem;
-    }
+/* Equipment description styling */
+.equipment-details p {
+  font-size: 1rem;
+}
 
-    .equipment-details .price {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
+/* Equipment price styling */
+.equipment-details .price {
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
-    /* Quantity controls */
-    .quantity-controls {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
+/* Container for quantity control buttons and display */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
 
-    .quantity-controls button {
-      width: 35px;
-      height: 35px;
-    }
+/* Style for plus/minus quantity buttons */
+.quantity-controls button {
+  width: 35px;
+  height: 35px;
+}
 
-    ul {
-        list-style: none;
-        padding-left: 0px;
-      }
+/* Remove bullet points and left padding from unordered lists */
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
 
-    /* Responsive design: Image on top and details below */
-    @media (max-width: 768px) {
-      .equipment-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .equipment-item {
+    flex-direction: column; /* Stack image above text */
+    align-items: flex-start;
+  }
 
-      .equipment-details p, ul{
-      font-size: 0.9rem;
-      }
+  /* Reduce text size for better readability on small screens */
+  .equipment-details p,
+  ul {
+    font-size: 0.9rem;
+  }
 
-      .equipment-item img {
-        width: 100%;
-        height: auto;
-        margin-right: 0;
-        margin-bottom: 15px;
-      }
-    }
+  /* Make image full width and add bottom spacing */
+  .equipment-item img {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
 
-    /* Modal styling for custom alert */
-    .modal-alert .modal-content {
-      background-color: #f0f8ff;
-      color: #333;
-    }
+/* Custom modal alert styles */
+.modal-alert .modal-content {
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333; /* Dark text for readability */
+}
 
-    .modal-alert .modal-header {
-      border-bottom: none;
-    }
+/* Remove default borders in modal */
+.modal-alert .modal-header {
+  border-bottom: none;
+}
 
-    .modal-alert .modal-footer {
-      border-top: none;
-    }
+.modal-alert .modal-footer {
+  border-top: none;
+}

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bean Boutique - Welcome</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="common.css">
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="common.css">
+  
 </head>
 <body>
   <!-- Navbar -->
@@ -92,7 +92,7 @@
 </div>
 
 <!-- Special Offers Section -->
- <section class="container my-5">
+ <section class="container my-5" data-aos="fade-up">
   <div class="row align-items-center">
     <div class="col-lg-6 mb-3 mb-lg-0">
       <img src="images/warmcommunity1.webp" alt="Coffee beans" class="w-100 rounded">
@@ -183,7 +183,7 @@
   </div>
 </section>
 
-<!-- Video and Text Section -->
+<!-- image and Text Section -->
 <section class="container my-5">
   <div class="row align-items-center">
     <div class="col-lg-6 mb-3 mb-lg-0">
@@ -194,7 +194,7 @@
       <p>At Bean Boutique, our beans are more than just coffee. They're a product of dedication and artistry crafted by expert hands and roasted to perfection.</p>
       <p>Feel the aroma, taste the richness, and embrace a new way of experiencing coffee in every sip.</p>
       <p>Join our journey to redefine quality and sustainability, one cup at a time.</p>
-      <a href="offers.html" class="btn btn-success">View Offers</a>
+      <a href="events.html" class="btn btn-success">View Events</a>
     </div>
   </div>
 </section>
@@ -231,7 +231,7 @@
   </div>
 </section>
 
-<section class="container my-5 text-center">
+<section class="container my-5 text-center" data-aos="zoom-in">
   <h2>What Our Customers Say</h2>
   <div class="testimonial-section">
     <div class="testimonial-slideshow">
@@ -305,9 +305,13 @@
     </div>
   </div>
 </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init(); // Initialize the plugin
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
   <script src="common.js"></script>
+  <script src="script.js"></script>
+ 
 </body>
 </html>

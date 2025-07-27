@@ -45,17 +45,28 @@ function updatePrice(coffeeId) {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    new Viewer(document.getElementById('coffee-list'), {
+      navbar: false,
+      toolbar: true,
+      title: false
+    });
+  });
+
 function addToCart(coffeeId) {
 const shopNowButton = document.getElementById(`shopNow${coffeeId}`);
-
-// Create a unique ID for each item based on coffeeId, grind type, and size
-const itemId = `coffee-${coffeeId}-${selectedGrind[coffeeId]}-${selectedSize[coffeeId].size}`;
 
 // Check if both grind type and size have been selected
 if (!selectedGrind[coffeeId] || !selectedSize[coffeeId]) {
     showAlert('Please select both grind type and size before adding to cart.');
     return;
 }
+// Create a unique ID for each item based on coffeeId, grind type, and size
+  const itemId = `coffee-${coffeeId}-${selectedGrind[coffeeId]}-${selectedSize[coffeeId].size}`;
+
+
+  console.log("Adding to cart:", itemId);
+
 
 const item = {
     id: itemId, // Unique identifier for this combination of coffee, grind type, and size

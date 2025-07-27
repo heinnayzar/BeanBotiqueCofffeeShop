@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bean Boutique - Coffee Selection</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Arima:wght@100..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viewerjs/dist/viewer.min.css">
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="common.css">
   <link rel="stylesheet" href="coffee.css">
 </head>
@@ -68,7 +68,7 @@
       
       <!-- Coffee 1: Signature Blend -->
       <div class="coffee-item" data-name="Signature Blend">
-        <img src="images/coffee1.jpg" alt="Signature Blend">
+        <img src="images/coffee1.jpg" alt="Signature Blend" id="coffeeImage" style="width: 22%; border-radius:5px; margin-right: 20px;">
         <div class="coffee-details">
           <h5>Signature Blend</h5>
           <p>A balanced blend with rich chocolate notes and a hint of caramel. Perfect for any time of day.</p>
@@ -112,7 +112,7 @@
 
       <!-- Coffee 2: Colombian Supremo -->
       <div class="coffee-item" data-name="Colombian Supremo">
-        <img src="images/coffee2.jpg" alt="Colombian Supremo">
+        <img src="images/coffee2.jpg" alt="Colombian Supremo" id="coffeeImage" style="width: 22%; border-radius:5px; margin-right: 20px;">
         <div class="coffee-details">
           <h5>Colombian Supremo</h5>
           <p>A smooth, full-bodied coffee with bright acidity and fruity undertones, perfect for a refreshing start to your day.</p>
@@ -154,7 +154,7 @@
 
       <!-- Coffee 3: Italian Roast -->
       <div class="coffee-item" data-name="Italian Roast">
-        <img src="images/coffee3.jpg" alt="Italian Roast">
+        <img src="images/coffee3.jpg" alt="Italian Roast"  id="coffeeImage" style="width: 22%; border-radius:5px; margin-right: 20px;">
         <div class="coffee-details">
           <h5>Italian Roast</h5>
           <p>A dark, bold roast with a smoky finish, perfect for those who love strong coffee.</p>
@@ -196,7 +196,7 @@
 
       <!-- Coffee 4: Ethiopian Yirgacheffe -->
       <div class="coffee-item" data-name="Ethiopian Yirgacheffe">
-        <img src="images/coffee4.jpg" alt="Ethiopian Yirgacheffe">
+        <img src="images/coffee4.jpg" alt="Ethiopian Yirgacheffe"  id="coffeeImage" style="width: 22%; border-radius:5px; margin-right: 20px;">
         <div class="coffee-details">
           <h5>Ethiopian Yirgacheffe</h5>
           <p>A light, floral coffee with vibrant acidity and complex flavors, perfect for connoisseurs.</p>
@@ -238,7 +238,7 @@
 
       <!-- Coffee 5: Sumatra Mandheling -->
       <div class="coffee-item" data-name="Sumatra Mandheling">
-        <img src="images/coffee5.jpg" alt="Sumatra Mandheling">
+        <img src="images/coffee5.jpg" alt="Sumatra Mandheling"  id="coffeeImage" style="width: 22%; border-radius:5px; margin-right: 20px;">
         <div class="coffee-details">
           <h5>Sumatra Mandheling</h5>
           <p>A rich and earthy coffee with herbal notes and a full body, perfect for a cozy evening.</p>
@@ -280,7 +280,7 @@
 
       <!-- Coffee 6: French Vanilla -->
       <div class="coffee-item" data-name="French Vanilla">
-        <img src="images/coffee6.jpg" alt="French Vanilla">
+        <img src="images/coffee6.jpg" alt="French Vanilla" id="coffeeImage" style="width: 22%; border-radius:5px; margin-right: 20px;">
         <div class="coffee-details">
           <h5>French Vanilla</h5>
           <p>A creamy, sweet blend with hints of vanilla that creates a comforting and indulgent experience.</p>
@@ -384,9 +384,13 @@
     </div>
   </div>
 </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init(); // Initialize the plugin
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/viewerjs/dist/viewer.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="coffee.js"></script>
   <script src="common.js"></script>
+  <script src="coffee.js"></script>
 </body>
 </html>

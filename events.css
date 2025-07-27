@@ -1,31 +1,42 @@
-    .event-card {
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s;
-      background: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .event-img {
-      height: 200px;
-      object-fit: cover;
-    }
-    .footer {
-      background-color: #343a40;
-      color: white;
-      padding: 30px 0;
-    }
-    .footer input[type=email] {
-      max-width: 300px;
-      padding: 10px;
-    }
-    @media (max-width: 768px) {
-      .event-img {
-        height: 150px;
-      }
-    }
-    .success-animation {
-      text-align: center;
-      color: green;
-      padding: 20px;
-      display: none;
-    }
+/* Event card box */
+.event-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Image inside event card */
+.event-img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Footer section */
+.footer {
+  background-color: #343a40;
+  color: white;
+  padding: 30px 0;
+}
+
+/* Footer email input */
+.footer input[type=email] {
+  max-width: 300px;
+  padding: 10px;
+}
+
+/* Smaller image height on mobile */
+@media (max-width: 768px) {
+  .event-img {
+    height: 150px;
+  }
+}
+
+/* Success message box (hidden by default) */
+.success-animation {
+  text-align: center;
+  color: green;
+  padding: 20px;
+  display: none;
+}

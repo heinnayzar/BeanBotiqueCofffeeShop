@@ -1,98 +1,98 @@
 .container .product-card {
-    padding: 15px;
+    padding: 15px; /* Spacing inside each product card */
 }
 
 .product-card .image-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    aspect-ratio: 1/1;
+    position: relative;     /* For positioning child elements */
+    overflow: hidden;       /* Hide overflow content */
+    width: 100%;            /* Full width */
+    aspect-ratio: 1/1;      /* Square container */
 }
 
 .product-card .product-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 100%;            /* Full width */
+    height: 100%;           /* Full height */
+    object-fit: cover;      /* Crop image to fit */
+    display: block;         /* Block-level element */
 }
 
 .product-card h5,
 .product-card p {
-    margin-top: 10px;
+    margin-top: 10px;       /* Space above heading and price */
 }
 
 .testimonial-section {
-    text-align: center;
-    margin: 30px 0px;
+    text-align: center;     /* Centered content */
+    margin: 30px 0;         /* Top and bottom spacing */
 }
 
 .profiles {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap;
+    display: flex;          /* Flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-end;  /* Align to bottom */
+    flex-wrap: wrap;        /* Wrap items */
 }
 
 .profile {
-    margin: 10px;
-    transition: transform 0.5s, opacity 0.5s;
+    margin: 10px;                          /* Gap between profiles */
+    transition: transform 0.5s, opacity 0.5s; /* Smooth hover effect */
 }
 
 .profile img {
-    border-radius: 50%;
+    border-radius: 50%;     /* Circle image */
     width: 80px;
     height: 80px;
 }
 
 .profile.active {
-    transform: scale(1.5);
-    opacity: 1;
+    transform: scale(1.5);  /* Enlarge active profile */
+    opacity: 1;             /* Full opacity */
 }
 
 .profile:not(.active) {
-    opacity: 0.5;
+    opacity: 0.5;           /* Faded out */
 }
 
 .testimonial-text {
-    margin: 30px auto;
-    max-width: 700px;
+    margin: 30px auto;      /* Vertical and horizontal center */
+    max-width: 700px;       /* Limit width */
 }
 
 .custom-modal {
-  background: #fff8f0;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    background: #fff8f0;    /* Light background */
+    border-radius: 20px;    /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Drop shadow */
 }
 
 .custom-modal h4 {
-  font-size: 1.7rem;
-  color: #5c3d2e;
-  font-weight: bold;
+    font-size: 1.7rem;      /* Heading size */
+    color: #5c3d2e;         /* Coffee-brown */
+    font-weight: bold;
 }
 
 .custom-modal p {
-  font-size: 1.05rem;
-  color: #333;
+    font-size: 1.05rem;     /* Slightly larger text */
+    color: #333;            /* Dark gray text */
 }
 
 .custom-modal .btn {
-  border-radius: 25px;
-  padding: 10px 24px;
+    border-radius: 25px;    /* Rounded button */
+    padding: 10px 24px;
 }
 
 @media (max-width: 992px) {
     .testimonial-text {
-        margin: 10px;
+        margin: 10px;       /* Reduce margin on smaller screens */
     }
 }
 
 .guarantee-icon {
-    font-size: 2rem;
-    margin: 15px 0px;
+    font-size: 2rem;        /* Icon size */
+    margin: 15px 0;         /* Vertical spacing */
 }
 
 .custom-notification {
-    background-color: brown;
+    background-color: brown; /* Notification background */
     color: white;
     border: none;
     border-radius: 0;
@@ -101,48 +101,48 @@
 .btn {
     font-size: 1em;
     font-weight: 400;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.2em;  /* Letter spacing */
 }
 
 .custom-img-height {
-    height: 600px;
-    object-fit: cover;
+    height: 600px;          /* Fixed height */
+    object-fit: cover;      /* Crop to fit */
 }
 
-
+/* Responsive Styles */
 @media (max-width: 768px) {
     .custom-img-height {
-        max-height: 400px;
+        max-height: 400px;  /* Reduce carousel height */
         object-fit: cover;
     }
-    
+
     .container .product-card {
-        padding: 0 25px;
+        padding: 0 25px;    /* Horizontal padding only */
     }
 
     section.d-flex {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically */
     }
 
     .row.no-wrap {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 15px;
+        flex-wrap: nowrap;      /* Prevent wrap */
+        overflow-x: auto;       /* Horizontal scroll */
+        gap: 15px;              /* Gap between items */
     }
 
     .row.no-wrap > .col-md-4 {
-        flex: 0 0 auto;
-        width: 80%;
+        flex: 0 0 auto;         /* Prevent shrinking */
+        width: 80%;             /* Wider scroll item */
     }
 
     .row.no-wrap::-webkit-scrollbar {
-        display: none;
+        display: none;          /* Hide scrollbar */
     }
 }
 
 @media (max-width: 576px) {
     .custom-img-height {
-        max-height: 200px;
+        max-height: 200px;      /* Smaller carousel height */
         object-fit: cover;
     }
 }
